@@ -1,0 +1,530 @@
+body,
+html {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+* {
+    font-family: 'Chivo', sans-serif;
+    box-sizing: border-box; /*box-sizing: content-box | border-box | initial | inherit*/
+    word-break: keep-all;
+}
+
+/*-----other-----*/
+.clear {
+    height: 100px;
+}
+#loading_page {
+    position: fixed;
+    display: block;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background: #000000; 
+}
+#loading_page img {
+    position: absolute;
+    top: 47vh;
+    left: 47vw;
+    height: 6vh;
+}
+/*-----navigation-----*/
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 0;
+    width: 100vw;
+    height: 70px;
+}
+nav .size {
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 8vh;
+    min-height: 70px;
+}
+nav .wrapper {
+    width: 100vw;
+}
+nav .wrapper .navigation {
+    float: right;
+    top: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav_wrapper_change {
+    background-image: linear-gradient(to bottom right, #017accfa, #014370fa )
+}
+nav .logo {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+    top: 0;
+    margin: 5px 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+nav .logo img {
+    min-width: 175px;
+    width: 9vw;
+    background-position: center;
+}
+nav .nav_menu{
+    top: 25px;
+    font-size: 25px;
+    font-family: 'Sunflower', sans-serif;
+    color: white;
+    text-decoration:none
+}
+nav .top {
+    position: fixed;
+    right: 440px;
+}
+nav .go_connection{
+    position: fixed;
+    right: 19px;
+}
+nav .go_members{
+    position: fixed;
+    right: 153px;
+}
+nav .go_awards{
+    position: fixed;
+    right: 270px;
+}
+nav .go_about{
+    position: fixed;
+    top: 25px;
+    right: 365px;
+}
+
+/*nav .line {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 70px;
+    width: 100%;
+    height: 1px;
+    opacity: 1;
+    background-image: linear-gradient(to bottom right, #017accfa, #014370fa )
+}*/
+nav .hamburger{
+    opacity: 1;
+}
+
+
+
+/*-----content-----*/
+content {
+    width: 100vw;
+    height: 100vh;
+}
+
+    .hamburger,
+    .hamburger span {
+        opacity: 0;
+        display: inline-block;
+        transition: all .4s;
+        box-sizing: border-box;
+    }
+    .hamburger {
+        opacity: 0;
+        position: fixed;
+        width: 50px;
+        height: 44px;
+    }
+    .hamburger span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 4px;
+    }
+    .hamburger span:nth-of-type(1) {
+        top: 0;
+    }
+    .hamburger span:nth-of-type(2) {
+        top: 20px;
+    }
+    .hamburger span:nth-of-type(3) {
+        bottom: 0;
+    }
+
+    .hamburger.active-1 span:nth-of-type(1) {
+        -webkit-transform: translateY (20px) rotate (-45deg);
+        transform: translateY(20px) rotate(-45deg);
+    }
+    .hamburger.active-1 span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .hamburger.active-1 span:nth-of-type(3) {
+        -webkit-transform: translateY(-20px) rotate(45deg);
+        transform: translateY(-20px) rotate(45deg);
+    }  
+
+
+/*-----main-----*/
+.main {
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/main_page.jpg');
+}
+.main_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main_text p {
+    width: 100%;
+    min-width: 100%;
+    margin: 15vh 0 0;
+    color: #017acc;
+    font-size: 20vh;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+.main_text h1 {
+    margin: 0 0 5vh;
+    color: #017acc;
+    font-size: 55vh;
+    line-height: 80%;
+}
+.main button {
+    margin: 0 0 15vh;
+    font-family: 'Sunflower', sans-serif;
+    background: transparent;
+    border-radius: 100px;
+}
+.main button.button {
+    padding: 10px 50px;
+    color: #017acc;
+    font-size: 40px;
+    border: 3px solid #017acc;   
+}
+.main button.button:hover {
+    color: #ffffff;
+    background: #017acc;
+}
+
+
+
+/*-----information-----*/
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 175vh
+}
+.information h1 {
+    margin: 10vh 0 1vh;
+    font-size: 20vh;
+    font-family: 'Chivo', sans-serif;
+}
+.information p {
+    margin: 1vh 0 3vh 0;
+    font-size: 4vh;
+    font-family: 'Poor Story', cursive;
+}
+.information p a {
+    font-size: 3vh;
+    font-family: 'Chivo', sans-serif;
+}
+.information iframe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10vh 20vw;
+    width: 60vw;
+    height: 50vw; 
+}
+
+
+/*-----awards-----*/
+.awards {
+    height: 65vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow-y: scroll;
+    background-image: url('../images/award_page.jpg');
+}
+.awards_title {
+    font-family: 'Chivo', sans-serif;
+    font-size: 75px;
+    color: white;
+}
+.awards_list {
+    list-style: none;
+    padding: 0;
+    height: 75vh;
+    margin: 0 25vw;
+}
+.awards_list li {
+    margin: 20px;
+    font-family: 'Jua', sans-serif;
+    font-size: 23px;
+    color: white;
+}
+.awards_list li a {
+    font-family: 'Jua', sans-serif;
+    font-size: 25px;
+}
+
+
+
+/*-----awards scrollbar-----*/
+.awards::-webkit-scrollbar {
+    width: 20px;
+}
+.awards::-webkit-scrollbar-button:end:increment,
+.awards::-webkit-scrollbar-button:start:decrement {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url('') rgba(1, 122, 204, 1);
+}
+.awards::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .2);
+}
+.awards::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .6);
+}
+
+
+
+/*-----member-----*/
+.member {
+    min-width: 1px;
+    font-family: 'Jua', sans-serif;
+}
+.member_title {
+    color: black;
+    font-size: 50px;
+    font-family: 'Chivo', sans-serif;
+}
+.team_member_title {
+    font-size: 75px;
+    font-family: 'Chivo', sans-serif;
+}
+.team_member_sibo {
+    margin: 100vh 0 0;
+    font-size: 50px;
+    font-family: 'Chivo';
+}
+.members h2 {
+    padding: 2vh 0 0;
+    margin: 0;
+    color: #111111;
+    font-size: 30px;
+    font-family: 'Sunflower', sans-serif;
+}
+.members h3 {
+    color: #777777;
+    padding: 1vh 0 2vh;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Jua', sans-serif;
+}
+.members img {
+    width: 20vw;
+    min-width: 200px;
+    max-width: 500px;
+    height: auto;
+    padding: 2vh 2vh 0;
+}
+.profile_end {
+    margin: 0 40vw 0 0;
+}
+.profile_inside{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/*-----connection-----*/
+.connection {
+    margin: 20vh 5vw 10vh;
+}
+.connection_title {
+    margin: 30vh 0 5vh;
+    font-size: 75px;
+    font-family: 'Chivo', sans-serif;
+}
+
+.connection img {
+    width: 15vw;
+    height: auto;
+    margin: 10vh 2.5vh;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    color: white;
+    background-image: linear-gradient(to bottom right, #017accfa, #014370fa )
+}
+footer .footer_instide {
+    width: 50vw;
+    height: 100px;
+}
+/*-----mobile view-----*/
+@media screen and (max-width: 1024px){
+    nav .size { 
+        min-height: 70px;
+        height: 10vh;
+        max-height: 70px;
+    }
+    nav .wrapper .top {
+        top: 3vh;
+        right: 7.5%;
+        font-family: 'Sunflower', sans-serif;
+    }
+    nav .go_connection, nav .go_members, nav .go_awards, nav .go_about {
+        display: none;
+    }
+    nav .logo{
+        margin: 0.5vh;
+    }
+    nav .logo img {
+        width: 20vh;
+    }
+     
+    .main {
+        width: 100%;
+        height: 100vh;
+        min-height: 90vw;
+        background-image: url('../images/main_page_mobile.jpg');
+    }
+    .main_text p {
+        margin: 20vh 0 0;
+        font-size: 15vw;
+    }
+    .main_text h1 {
+        margin: 0 0 15vh;
+        font-size: 50vw;
+    }
+    .main button.button {
+        margin: 0 5vw 5vh;
+    }
+    .nav_wrapper_change {
+        background-color: #017acc;
+    }
+    .information {
+        height: 100vh;
+        min-height: 200vw;
+    }
+    .information h1 {
+        font-size: 75px;
+        margin: 5vh 0;
+    }
+    .information p {
+        font-size: 4vw;
+        margin: 0 0 5vh 0;
+    }
+    .information p a {
+        font-size: 3.7vw;
+    }
+    .information iframe{
+        margin: 0 5vw;
+        width: 90vw;
+        min-width: 30vh;
+        height: 90vw; 
+        max-height: 35vh; 
+    }
+    .awards {
+        height: 65vh;
+        background-image: url('../images/award_page_mobile.jpg')
+    }
+    .awards li {
+        font-size: 5vw;
+    }
+    .awards_list {
+        margin: 0;
+    }
+    .awards_list li {
+        margin: 5vh 7.5vw 0;
+    }
+    .awards_list li a {
+        font-size: 4.8vw;
+    }
+    .awards::-webkit-scrollbar {
+        width: 20px;
+    }
+    .member_title {
+        width: 100vw;
+        height: 40vw;
+    }
+    .member_title li {
+        font-size: 1vw;
+    }
+    .team_member_title {
+        font-size: 10vw;
+    }
+    .team_member_sibo {
+        font-size: 4vw;
+    }
+    .members img {
+        width: 60vw;
+    }
+    .members {
+        display: flex;
+        flex-direction: row;
+        padding: 75px 0 20px;
+        background: rgba(0, 0, 0, .03);
+        overflow-x: scroll;
+    }
+    .members::-webkit-scrollbar {
+        height: 17.5px;
+    }
+    .members::-webkit-scrollbar-button:end:increment,
+    .members::-webkit-scrollbar-button:start:decrement {
+        display: block;
+        width: 20px;
+        height: 12px;
+        background: rgba(1, 122, 204, 1);
+    }
+    .members::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, .03);
+    }
+    .members::-webkit-scrollbar-thumb {
+        background: rgba(1, 122, 204, 0.3);
+    }
+    .profile_end {
+        margin: 0;
+    }
+    .connection {
+        margin: 5vh 3vw 10vh;
+    }
+    .connection img {
+        width: 45vw;
+        height: auto;
+        padding: 0 3vw;
+        margin: 0;
+    }
+    .connection_title {
+        font-size: 15vw;
+    }
+    footer {
+        background-color: #017acc;
+    }
+}

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Admin Page</title>
+        <link rel="stylesheet" href="/stylesheets/admin.css">
+    </head>
+    <body>
+        <main>
+            <% if(application) { %>
+                <h1>지원서 : <%= application.name %></h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><%= application.class %></td>
+                            <td><%= application.number %></td>
+                            <td><%= application.email %></td>
+                            <td><%= application.position %></td>
+                            <td><%= (application.isSubmitted) ? '제출함' : '미제출' %></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr/>
+                <textarea disabled><%= application.application %></textarea>
+            <% } else { %>
+                <h1>지원서가 존재하지 않습니다.</h1>
+            <% } %>
+        </main>
+    </body>
+</html>

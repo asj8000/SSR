@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns="http://www.w3.org/1999.xhtml">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>write</title>
+        <meta property="og:url" content="http://ssr.kro.kr/">
+        <meta property="og:title" content="시스템보안연구동아리">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/99E7C2465C7B71DE30">
+        <meta property="og:description" content="SSR에 지원하러 가기!">
+        <link rel="stylesheet" href="./stylesheets/write.css">
+        <link href="https://fonts.googleapis.com/css?family=Jua|Chivo:400,700|Poor+Story|Sunflower:300|ZCOOL+QingKe+HuangYou&amp;subset=korean" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>$('.top').click(function(){$('html, body').animate({scrollTop:0},400);return false})</script>
+        <script type="text/javascript"> setTimeout(function() { $('#loading_page').fadeOut(); }, 300);</script>
+        <script> function len_chack(){ var frm = document.write_len.write; if(frm.value.length > 2000){ alert("글자수는 한글 1000자로 제한됩니다."); frm.value = frm.value.substring(0,2000); frm.focus(); }} </script>
+        
+    </head>
+    <body>
+        <content>
+            <div class="notice">
+                <div class="notice_title">Notice</div>
+                <div class="clear"></div>
+                <div class="notice_text">
+                <% if (isBlocked) { %>
+                    <button class="button">지원 접수가 만료되었습니다.</button>
+                <% } else { %>
+                    <button class="button">SSR에 지원해주셔서 감사합니다.</button>
+                    <button class="button">다음 작성 양식에 맞춰 지원서를 작성해주시기 바랍니다.</button>
+                    <button class="button">본 지원서는 저장과 <a href='/write#load'>불러오기</a>가 가능합니다.</button>
+                    <button class="button">여러번 수정 가능하지만 <strong><i>제출 후 수정은 불가능</i></strong>합니다. <br/>이 점 유의해주시기 바랍니다.</button>
+                    <button class="button">다음 작성 양식을 공격할 시 불이익을 받을 수 있습니다.</button>
+                    <button class="button">합격 통보는 이메일을 통해 전송될 예정이니 정확하게 적어주시기 바랍니다.</button>
+                <% } %>
+                </div>
+            </div>
+            <div class="write">
+                <form action="/write" method="post">
+                <div class="write_title">Write</div>
+                <div class="write_content">
+                    <div class="write_content_1">
+                        <div class="write_input_box">
+                            <div class="write_input input-effect">
+                                <input name="name" placeholder="name" value="<%= name %>" type="name" class="effect">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+                            <div class="write_input input-effect">
+                                <input name="email" placeholder="email" value="<%= email %>" type="email" class="effect">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+                            <div class="write_input input-effect">
+                            <input name="password" class="effect" placeholder="Password (영문자 + 숫자 8자 이상) - 매 불러오기 시 첫 저장한 비밀번호를 사용합니다." type="password" >
+                            <span class="focus-border">
+                                <i></i>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="write_content_2">
+                        <select class="input_box class_box" name="class" type="class">
+                            <option value="<%= classNum %>" selected><%= classNum %></option>
+                            <option value="G1">Game-1</option>
+                            <option value="U1">Usn-1</option>
+                            <option value="U2">Usn-2</option>
+                            <option value="H1">Hacking-1</option>
+                            <option value="H2">Hacking-2</option>
+                        </select>
+                        <select class="input_box number_box" name="number" type="number">
+                            <option value="<%= number %>" selected><%= number %></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                        </select>
+                    </div>
+                    <div class="write_content_3">
+                        <select class="input_box position_box" placeholder="position" name='position'>
+                            <option value="<%= position %>" selected><%= position %></option>
+                            <option value="System hacking">System hacking</option>
+                            <option value="Reverse engineering">Reverse engineering</option>
+                            <option value="Forensic">Forensic</option>
+                            <option value="Web hacking">Web hacking</option>
+                            <option value="Web Programming">Web Programming</option>
+                            <option value="Android Developing">Android Developing</option>
+                        </select>
+                    </div>
+                    <div class="write_content_4">
+                        <div name="write_len"> 
+                        <textarea name="application" onkeyup="len_chack()"  placeholder="자기소개 작성란. 자기소개는 자유양식입니다." value="<%= application %>" type="write" class="effect" id="content"><%= application %></textarea>
+                        </div>
+                    </div>
+                    <div class="write_content_5">
+                        <div><span id="countNumber">0/1000</span></div>
+                    </div>
+                    <div class="write_content_6">
+                        <button class="button_1" name="button" type="submit" value="저장하기" <%= isBlocked ? 'disabled' : '' %>>저장하기</button>
+                        <button class="button_2" name="button" type="submit" value="제출하기" <%= isBlocked ? 'disabled' : '' %>>제출하기</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div id="load"></div><!--불러오기-->
+            <div class="load">
+                <form action="/load" method="POST">
+                <span class="load_title">Load</span>
+                <div class="clear"></div>
+                <div class="load_box_size">
+                    <div class="load_input_box">
+                        <div class="load_input input-effect">
+                            <input class="effect" name="email" placeholder="Email" type="email" >
+                            <span class="focus-border">
+                                <i></i>
+                            </span>
+                        </div>
+                        <div class="load_input input-effect">
+                            <input class="effect" name="password" type="password" placeholder="Password">
+                            <span class="focus-border">
+                                <i></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="load_button_size">
+                    <button class="button" name="button" type="submit" value="불러오기" <%= isBlocked ? 'disabled' : '' %>>불러오기</button>
+                </div>
+                </form>
+            </div>
+        </content>
+        <footer>
+            <div class="footer_inside">
+                <a>&copy; all right reversed by SSR 2019</a>
+            </div>
+        </footer>
+        <div id="loading_page">
+            <a href="http://ssr.kro.kr/anBn7Kex7Kex66eo"><img src="/images/loading.gif" alt="Loading"></a>
+        </div>
+        <nav>
+            <div class="size">
+                <div class="wrapper">
+                    <div class="navigation">
+                        <button class="button" onclick="location.href='/'">&lt; 돌아가기</button>
+                    </div>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="logo" >
+                <a href="/"><img src="images/logo.png" /></a>
+            </div>      
+        </nav>
+        <script src="/javascripts/textCount.js"></script>
+    </body>
+</html>
